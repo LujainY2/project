@@ -7,8 +7,7 @@ import gzip
 # Load movies and similarity matrix
 movies = pickle.load(open("movies2.pkl", "rb"))
 # Open the gzip file and load the pickle data
-with gzip.open("similarity2.pkl.gz", "rb") as f:
-    similarity = pickle.load(f)
+similarity = pickle.load(open("similarity2.pkl", "rb"))
 
 
 
