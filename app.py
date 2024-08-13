@@ -5,12 +5,15 @@ import requests
 
 # Load movies and similarity matrix
 movies = pickle.load(open("movies2.pkl", "rb"))
-similarity = pickle.load(open("similarity2.pkl", "rb"))
+import gzip
+import pickle
 
+# Open the gzip file and load the pickle data
+with gzip.open("similarity2.pkl.gz", "rb") as f:
+    similarity = pickle.load(f)
 
-
-def fetch_poster(movie_id):
-        url = f"2beceafe4a67fecbec3345b84003c256"
+#def fetch_poster(movie_id):
+#        url = f"2beceafe4a67fecbec3345b84003c256"
 #        response = requests.get(url)
 #        response.raise_for_status()  # Will raise an exception for HTTP errors
 #        data = response.json()
